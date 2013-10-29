@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>gov.usgs.nwc</groupId>
-  <artifactId>nwcui</artifactId>
+  <artifactId>nwcui-proto</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>nwcui</name>
+  <name>nwcui-proto</name>
   <url>http://maven.apache.org</url>
 
   <build>
@@ -50,7 +50,7 @@
 			</plugin>
 		</plugins>
 		
-		<finalName>nwcui</finalName>
+		<finalName>nwcui-proto</finalName>
 	</build>
 
 	<properties>
