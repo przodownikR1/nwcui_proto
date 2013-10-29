@@ -1,0 +1,118 @@
+apply plugin: 'war'
+apply plugin: 'tomcat'
+apply plugin: 'cargo'
+apply plugin: 'eclipse-wtp'
+
+/**
+ * buildscript method to download and included required packages
+ */
+buildscript {
+	repositories {
+			mavenCentral()
+		add(new org.apache.ivy.plugins.resolver.URLResolver()) {
+			name = 'GitHub'
+			addArtifactPattern 'http://cloud.github.com/downloads/[organisation]/[module]/[module]-[revision].[ext]'
+		}
+	}
+	dependencies {
+		classpath 'bmuschko:gradle-cargo-plugin:0.3', 'org.gradle.api.plugins:gradle-tomcat-plugin:0.9.8'
+	}
+}
+
+/**
+ * Include our dependency declarations file (put it separate because it can get big)
+ */
+apply from: 'dependencies.gradle'
+
+/**
+ * Define our sources (i.e. where our source lives)
+ */
+sourceSets {
+	main {
+		java {
+			srcDirs = ['src']  // replaces 'src/main/java' with 'src'
+		}
+	}
+}
+
+/**
+ * Set the directory where all web sources are contained (included WEB-INF and
+ * Spring xml config files)
+ */
+webAppDirName = 'war'
+
+/**
+ * Set the tomcat context path for this application (defaults to war name)
+ * 		** This is for the embedded tomcat **
+ */
+tomcatRun.contextPath = '/tbgwebsite'
+
+
+/**
+ * Our cargo remote Tomcat deployment task (gradle cargoDeployRemote)
+ *
+ * 		context - URL Resource Name or the name of the WAR file
+ */
+cargo {
+	containerId = 'tomcat7x'
+	port = 8080
+	context = '/tbgwebsite'
+	remote {
+		/**
+		 * Local Server for testing
+		 */
+		//hostname = 'localhost'					// local testing
+		//username = 'gradle'						// local testing
+		//password = 'eldarg1'					// local testing
+		
+		/**
+		 * Local VM Server for testing
+		 */
+		hostname = 'testvm-webserver'		// local testing
+		username = 'gradle'					// local testing
+		password = 'eldarg1'					// local testing
+		
+		/**
+		 * Hosted Server for prod
+		 */
+		//hostname = '173.255.221.151'			// hosted server
+		//username = 'railo_gradle'					// hosted server
+		//password = 'oliar_eldarg1'					// hosted server
+		
+		/**
+		 * Local Hosted Server for prod
+		 */
+		//hostname = 'localhost'					// hosted server
+		//username = 'railo_gradle'				// hosted server
+		//password = 'oliar_eldarg1'				// hosted server
+	}
+}
+
+/**
+ * Add configuration files to the resulting war file
+ * 
+ * 		** 	Tomcat class loader can only read files inside
+ * 			WEB-INF/classes/
+ */
+war {
+	/**
+	 * Copy the log4j properties file to the classpath
+	 */
+	from('conf/logging/') {
+		include 'log4j.properties'
+		into('WEB-INF/classes/')
+	}
+	
+	/**
+	 * Copy the db properties file to the classpath
+	 */
+	from('conf/db/') {
+		include 'db.properties'
+		into('WEB-INF/classes/')
+	}
+}
+
+
+
+
+

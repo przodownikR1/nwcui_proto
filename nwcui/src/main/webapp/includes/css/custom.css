@@ -1,0 +1,21 @@
+/* *****************************************************************************
+ * Project:		nwcui
+ * Source:		custom.css
+ * Author:		Philip Russo
+ **************************************************************************** */
+
+/* This css should be overwritten by the project using this template */
+
+#main_page {
+	
+}
+
+.workflow_div_contents {
+	padding:		10px;
+	margin-left: 	auto;
+	margin-right: 	auto;
+
+	height: 		250px;
+	width:		250px;
+	background:	#444;
+}

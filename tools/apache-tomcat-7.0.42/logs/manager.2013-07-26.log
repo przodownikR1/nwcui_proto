@@ -1,0 +1,14 @@
+Jul 26, 2013 2:12:39 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+Jul 26, 2013 2:12:39 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Global resources are available
+Jul 26, 2013 2:12:39 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Jul 26, 2013 2:12:39 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: deploy: Deploying web application '/tbgwebsite'
+Jul 26, 2013 2:12:39 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: Uploading WAR file to /Users/prusso/Documents/Personal/Development/Projects/JAVA/tbgwebsite/tools/apache-tomcat-7.0.42/webapps/tbgwebsite.war
+Jul 26, 2013 2:13:26 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Jul 26, 2013 2:13:26 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: undeploy: Undeploying web application at '/tbgwebsite'

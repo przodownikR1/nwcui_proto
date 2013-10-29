@@ -1,0 +1,131 @@
+
+/**
+ * Declaration to look at mavenCentral for any requested dependencies
+ */
+repositories {
+   mavenCentral()
+}
+
+/**
+ * Include Java servlet, jsp and jstl libs
+ * Include Spring WebMVC and log4j libs during compile
+ */
+dependencies {
+   providedCompile 'javax.servlet:javax.servlet-api:3.1.0',
+                   'javax.servlet:jsp-api:2.0',
+				   'javax.servlet:jstl:1.1.2',
+				   'taglibs:standard:1.1.2'
+				   
+   runtime 'javax.servlet:jstl:1.1.2'
+   
+   /**
+    * Spring's MVC framework
+    */
+   compile 'org.springframework:spring-webmvc:3.2.2.RELEASE'
+   
+   /**
+    * Log4j (cuz it rocks)
+    */
+   compile 'log4j:log4j:1.2.17'
+   
+   /**
+    * For XML-less configuration
+    */
+   compile 'cglib:cglib-nodep:3.0@jar'
+   compile 'cglib:cglib:3.0@jar'
+   
+   /**
+    * Include the jstl jars in the WEB-INF/lib directory
+    */
+   compile 'javax.servlet.jsp.jstl:jstl-api:1.2@jar'
+   compile 'javax.servlet:jstl:1.2@jar'
+      
+   /**
+    * Required for getting spring working with Hibernate
+    */
+   compile 'org.springframework:spring-orm:3.2.3.RELEASE@jar'
+   compile 'org.springframework:spring-tx:3.2.3.RELEASE@jar'
+   compile 'org.springframework:spring-jdbc:3.2.3.RELEASE@jar'
+   
+   /**
+    * Persistence dependency dependencies (this is irritating...)
+    * Many of the jars we include have runtime dependencies so we must
+    * get their jars in the war
+    */
+   //compile 'javax.persistence:persistence-api:1.0.2@jar'
+   compile 'org.eclipse.persistence:javax.persistence:2.1.0@jar'
+   compile 'org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final@jar'
+   compile 'org.jboss.logging:jboss-logging:3.0.0.GA@jar'
+   compile 'javax.transaction:jta:1.1@jar'
+   compile 'dom4j:dom4j:1.6.1@jar'
+   compile 'org.hibernate.common:hibernate-commons-annotations:4.0.1.Final@jar'
+   compile 'javassist:javassist:3.12.1.GA@jar'
+   compile 'antlr:antlr:2.7.7@jar'
+   
+   /**
+	* Include Hibernate
+	*/
+   compile 'org.hibernate:hibernate-core:4.2.3.Final@jar'
+   
+   /**
+	* Only needed when using JPA instead of "pure Hibernate"
+	*/
+   compile 'org.hibernate:hibernate-entitymanager:4.2.3.Final@jar'
+   
+   /**
+    * DB connection pooling for production applications
+    */
+   compile 'commons-dbcp:commons-dbcp:1.4@jar'
+   compile 'commons-pool:commons-pool:1.6@jar'
+   
+   /**
+    * Pure Postgresql connector
+    * 
+    * Cannot use the newest Postgres driver as it does NOT fully support
+    * hibernate (CAN YOU F-ING BELIEVE IT!!!!).  There is an issue with
+    * setTimeout() and so we must use an old driver.
+    */
+   //compile 'postgresql:postgresql:9.1-901.jdbc4@jar'
+   compile 'postgresql:postgresql:8.2-507.jdbc4@jar'
+   
+   /**
+    * Include the Tiles 3.0 template framework
+    * 	(yes, Tiles has a shit-load of dependencies grrrr)
+    */
+   compile 'org.slf4j:slf4j-api:1.7.1'
+   compile 'commons-logging:commons-logging:1.1.1@jar'
+   compile 'commons-digester:commons-digester:1.7@jar'
+   compile 'commons-collections:commons-collections:3.2@jar'
+   compile 'commons-beanutils:commons-beanutils:1.8.3@jar'
+   compile 'org.apache.tiles:tiles-core:3.0.1@jar'
+   compile 'org.apache.tiles:tiles-template:3.0.1@jar'
+   compile 'org.apache.tiles:tiles-jsp:3.0.1@jar'
+   compile 'org.apache.tiles:tiles-extras:3.0.1@jar'
+   compile 'org.apache.tiles:tiles-api:3.0.1@jar'
+   compile 'org.apache.tiles:tiles-autotag-core-runtime:1.1.0@jar'
+   compile 'org.apache.tiles:tiles-request-api:1.0.1@jar'
+   compile 'org.apache.tiles:tiles-request-jsp:1.0.1@jar'
+   compile 'org.apache.tiles:tiles-request-servlet:1.0.1@jar'
+}
+
+/**
+ * Include Carge plugin for remote tomcat deployment
+ */
+dependencies {
+    def cargoVersion = '1.3.3'
+    cargo "org.codehaus.cargo:cargo-core-uberjar:$cargoVersion",
+          "org.codehaus.cargo:cargo-ant:$cargoVersion"
+}
+
+/**
+ * Include tomcat plugin for embedded tomcat deployment (test)
+ */
+dependencies {
+    def tomcatVersion = '7.0.42'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+           "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}"
+    tomcat("org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}") {
+        exclude group: 'org.eclipse.jdt.core.compiler', module: 'ecj'
+    }
+}
+

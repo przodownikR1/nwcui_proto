@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#Source this file (i.e. '% source source.build')
+
+echo
+echo "================================================="
+echo
+echo "Exporting Gradle Environment Variables"
+export GRADLE_HOME=$PWD/tools/gradle-1.6
+export PATH=$GRADLE_HOME/bin:$PATH
+
+if [[ "$@" = "tomcat" ]]
+	then
+		echo
+        	echo "Exporting Tomcat Environment Variables"
+        	echo
+        	export CATALINA_HOME=$PWD/tools/apache-tomcat-7.0.42
+        	export PATH=$CATALINA_HOME/bin:$PATH
+	else
+		echo
+		echo -e "NOTICE:\tIf you do not have tomcat installed (or"
+		echo -e "\trunning) you can use the included tomcat"
+		echo -e "\tserver by re-sourcing this file with the"
+		echo -e "\toptional 'tomcat' argument."
+		echo
+fi
+
+echo "================================================="
+echo
+echo "Make sure both JAVA_HOME and JRE_HOME are set in your environment"
+echo

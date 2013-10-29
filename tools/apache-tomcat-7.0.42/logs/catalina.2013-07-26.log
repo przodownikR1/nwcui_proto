@@ -1,0 +1,48 @@
+Jul 26, 2013 2:12:11 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /Users/prusso/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+Jul 26, 2013 2:12:11 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Jul 26, 2013 2:12:11 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Jul 26, 2013 2:12:11 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 447 ms
+Jul 26, 2013 2:12:11 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Jul 26, 2013 2:12:11 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.42
+Jul 26, 2013 2:12:11 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/prusso/Documents/Personal/Development/Projects/JAVA/tbgwebsite/tools/apache-tomcat-7.0.42/webapps/docs
+Jul 26, 2013 2:12:11 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/prusso/Documents/Personal/Development/Projects/JAVA/tbgwebsite/tools/apache-tomcat-7.0.42/webapps/examples
+Jul 26, 2013 2:12:11 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/prusso/Documents/Personal/Development/Projects/JAVA/tbgwebsite/tools/apache-tomcat-7.0.42/webapps/host-manager
+Jul 26, 2013 2:12:11 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/prusso/Documents/Personal/Development/Projects/JAVA/tbgwebsite/tools/apache-tomcat-7.0.42/webapps/manager
+Jul 26, 2013 2:12:11 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Jul 26, 2013 2:12:11 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Jul 26, 2013 2:12:11 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 433 ms
+Jul 26, 2013 2:12:39 PM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive /Users/prusso/Documents/Personal/Development/Projects/JAVA/tbgwebsite/tools/apache-tomcat-7.0.42/webapps/tbgwebsite.war
+Jul 26, 2013 2:12:46 PM org.apache.jasper.compiler.TldLocationsCache tldScanJar
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Jul 26, 2013 2:13:27 PM org.apache.catalina.startup.HostConfig deleteRedeployResources
+INFO: Undeploying context [/tbgwebsite]
+Jul 26, 2013 2:13:30 PM org.apache.catalina.core.StandardServer await
+INFO: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+Jul 26, 2013 2:13:30 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Jul 26, 2013 2:13:30 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Jul 26, 2013 2:13:30 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Jul 26, 2013 2:13:30 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Jul 26, 2013 2:13:30 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Jul 26, 2013 2:13:30 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-8080"]
+Jul 26, 2013 2:13:30 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
