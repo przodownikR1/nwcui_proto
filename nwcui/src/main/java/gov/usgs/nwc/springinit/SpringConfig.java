@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -53,21 +54,21 @@ public class SpringConfig extends WebMvcConfigurerAdapter {
 		/**
 		 * Our resources
 		 */
-		registry.addResourceHandler("/favicon.ico").addResourceLocations("/includes/img/favicon.ico").setCachePeriod(31556926);
-        registry.addResourceHandler("/css/**").addResourceLocations("/includes/css/**").setCachePeriod(31556926);
-        registry.addResourceHandler("/img/**").addResourceLocations("/includes/img/**").setCachePeriod(31556926);
-        registry.addResourceHandler("/js/**").addResourceLocations("/includes/js/**").setCachePeriod(31556926);
+		registry.addResourceHandler("/favicon.ico").addResourceLocations("/WEB-INF/includes/img/favicon.ico").setCachePeriod(31556926);
+        registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/includes/css/").setCachePeriod(31556926);
+        registry.addResourceHandler("/img/**").addResourceLocations("/WEB-INF/includes/img/").setCachePeriod(31556926);
+        registry.addResourceHandler("/js/**").addResourceLocations("/WEB-INF/includes/js/").setCachePeriod(31556926);
         
         /**
          * External Resources (Twitter Bootstrap and JQuery)
          */
-        registry.addResourceHandler("/bootstrap/**").addResourceLocations("/includes/3rdparty/bootstrap/**").setCachePeriod(31556926);
-        registry.addResourceHandler("/jquery/**").addResourceLocations("/includes/3rdparty/jquery/**").setCachePeriod(31556926);
+        registry.addResourceHandler("/bootstrap/**").addResourceLocations("/WEB-INF/includes/3rdparty/bootstrap/").setCachePeriod(31556926);
+        registry.addResourceHandler("/jquery/**").addResourceLocations("/WEB-INF/includes/3rdparty/jquery/").setCachePeriod(31556926);
         
         /**
          * Our theme's (I separate them from the above so that I know exactly what is what and where)
          */
-        registry.addResourceHandler("/themes/**").addResourceLocations("/includes/themes/**").setCachePeriod(31556926);
+        registry.addResourceHandler("/themes/**").addResourceLocations("/WEB-INF/includes/themes/").setCachePeriod(31556926);
     }
 	
 	/**
@@ -75,10 +76,12 @@ public class SpringConfig extends WebMvcConfigurerAdapter {
 	 * static resources like images and CSS files. To remedy this, I need to configure Spring MVC to
 	 * enable defaultServletHandling.
 	 * 
+	 * 		equivalent for <mvc:default-servlet-handler/> tag
+	 * 
 	 * To do that, my WebappConfig needs to extend WebMvcConfigurerAdapter and override the following method:
 	 */
-	/*@Override
+	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		configurer.enable();
-	}*/
+	}
 }

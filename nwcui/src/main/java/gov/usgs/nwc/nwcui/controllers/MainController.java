@@ -6,11 +6,11 @@
 
 package gov.usgs.nwc.nwcui.controllers;
 
+import gov.usgs.nwc.nwcui.factories.WorkflowFactory;
+import gov.usgs.nwc.nwcui.model.Workflow;
 import gov.usgs.nwc.nwcui.utils.WebsiteUtils;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -30,7 +30,7 @@ public class MainController {
     public ModelAndView entry() {
 		log.info("MainController.entry() Called");		
 		
-		ModelAndView mv = new ModelAndView("/main", "title", "National Water Census - User Interface");
+		ModelAndView mv = new ModelAndView("/main", "title", "Dashboard");
 		
 		/**
 		 * Lets get all available workflows
@@ -38,21 +38,25 @@ public class MainController {
 		 * 		In the future we can make a Workflow class that has all of the
 		 * 		workflow information embedded into it passed back to the client.
 		 */
-		List<String> workflows = Arrays.asList("Water Budget", "Aquatic Biology", "Streamflow Stats", "Data Discovery");
+		List<Workflow> workflows = WorkflowFactory.getInstance().getWorkflows();
 		mv.addObject("workflows", workflows);
 		
 		return mv;
     }
 	
-	@RequestMapping(value = {"/ang/", "/ang/*", "/ang/**"}, method=RequestMethod.GET)
+	@RequestMapping(value = {"/ang/**"}, method=RequestMethod.GET)
     public ModelAndView workflow(HttpServletRequest request) {
 		log.info("MainController.workflow() Called");
 		
 		String parameters = (String) request.getAttribute( HandlerMapping.PATH_WITHIN_HANDLER_MAPPING_ATTRIBUTE );
 		
+		log.error("REQUEST URI: " + request.getRequestURI());
+		log.error("REQUEST URL: " + request.getRequestURL());
+		log.error("REQUEST QUERY STRING: " + request.getQueryString());
+		
 		log.error("PARAMS:\n" + parameters);
 		
-		ModelAndView mv = new ModelAndView("/workflow", "title", "");
+		ModelAndView mv = new ModelAndView("/workflow", "title", "Workflow View");
 		
 		return mv;
     }

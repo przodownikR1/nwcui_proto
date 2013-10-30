@@ -22,22 +22,4 @@
 	<definition name="*/*" extends="base">
 		<put-attribute name="body" value="/WEB-INF/tiles/{2}/body.jsp" />
 	</definition>
-
-	<!-- Base Controller Request with additional method calls						-->
-	<!-- 	the {2} will map the "http://localhost:8080/path" to the SomeController 	-->
-	<!-- 	the {3} will map the "http://localhost:8080/path/path1 to the			-->
-	<!--		SomeController.path1() method as long as the SomeController explicitly 	-->
-	<!-- 	declares these resource: 										-->
-	<!-- 																-->
-	<!-- 		@Controller												-->
-	<!-- 		public class SomeController { 								-->
-	<!-- 			@RequestMapping(value="/path", method=RequestMethod.GET)		-->
-	<!-- 			public ModelAndView pathHandler() {...}						-->
-	<!-- 																-->
-	<!-- 			@RequestMapping(value="/path/path1", method=RequestMethod.GET)	-->
-	<!-- 			public ModelAndView path1() {...}							-->
-	<definition name="*/*/*" extends="base">
-		<put-attribute name="body" value="/WEB-INF/tiles/{2}/body.jsp" />
-	</definition>
-
 </tiles-definitions>
