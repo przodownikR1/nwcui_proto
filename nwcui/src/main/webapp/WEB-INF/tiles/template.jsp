@@ -25,7 +25,8 @@
 			</div>
 		</div>
 		
-		<div id="site_footer" class="navbar-fixed-bottom">
+		<!--	<div id="site_footer" class="navbar-fixed-bottom"> -->
+		<div id="site_footer" class="">
 			<tiles:insertAttribute name="footer" />
  		</div>
 	</body>

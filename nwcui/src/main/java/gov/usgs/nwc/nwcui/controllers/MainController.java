@@ -10,7 +10,9 @@ import gov.usgs.nwc.nwcui.factories.WorkflowFactory;
 import gov.usgs.nwc.nwcui.model.Workflow;
 import gov.usgs.nwc.nwcui.utils.WebsiteUtils;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -49,14 +51,18 @@ public class MainController {
 		log.info("MainController.workflow() Called");
 		
 		String parameters = (String) request.getAttribute( HandlerMapping.PATH_WITHIN_HANDLER_MAPPING_ATTRIBUTE );
+		String workflowName = (Arrays.asList(parameters.split("/")).get(2));
 		
-		log.error("REQUEST URI: " + request.getRequestURI());
-		log.error("REQUEST URL: " + request.getRequestURL());
-		log.error("REQUEST QUERY STRING: " + request.getQueryString());
+		Map<String, Workflow> workflowsMap = WorkflowFactory.getInstance().getWorkflowsMap();
 		
-		log.error("PARAMS:\n" + parameters);
+		log.error("PATH: [" + parameters + "]");
+		log.error("WORKFLOWNAME: [" + workflowName + "]");
+		
+		Workflow workflow = workflowsMap.get(workflowName);
+		log.error("WORKFLOWIMAGE: [" + workflow.getImage() + "]");
 		
 		ModelAndView mv = new ModelAndView("/workflow", "title", "Workflow View");
+		mv.addObject("workflow", workflow);
 		
 		return mv;
     }

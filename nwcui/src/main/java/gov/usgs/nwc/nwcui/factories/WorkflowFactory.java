@@ -14,18 +14,18 @@ public class WorkflowFactory {
     
     private WorkflowFactory() {
     	WorkflowFactory.workflowMap = new HashMap<String, Workflow>();
-    	workflowMap.put("Water Budget", new Workflow("Water Budget", "/ang/waterbudget/#/waterbudget/value1/value2"));
-    	workflowMap.put("Aquatic Biology", new Workflow("Aquatic Biology", "/ang/aquaticbiology/#/aquaticbiology/value1/value2"));
-    	workflowMap.put("Streamflow Stats", new Workflow("Streamflow Stats", "/ang/streamflowstats/#/streamflowstats/value1/value2"));
-    	workflowMap.put("Data Discovery", new Workflow("Data Discovery", "/ang/datadiscovery/#/datadiscovery/value1/value2"));
+    	workflowMap.put("waterbudget", new Workflow("waterbudget", "Water Budget", "/ang/waterbudget/#/waterbudget/value1/value2", "/img/workflow/originals/waterBudget.png"));
+    	workflowMap.put("aquaticbiology", new Workflow("aquaticbiology", "Aquatic Biology", "/ang/aquaticbiology/#/aquaticbiology/value1/value2", "/img/workflow/originals/acquaticBiodata.png"));
+    	workflowMap.put("streamflowstats", new Workflow("streamflowstats", "Streamflow Stats", "/ang/streamflowstats/#/streamflowstats/value1/value2", "/img/workflow/originals/streamflowStatistics.png"));
+    	workflowMap.put("datadiscovery", new Workflow("datadiscovery", "Data Discovery", "/ang/datadiscovery/#/datadiscovery/value1/value2", "/img/workflow/originals/acquaticBiodata.png"));
     }
     
     public static WorkflowFactory getInstance() {
             return INSTANCE;
     }
     
-    public static void addWorkflow(String workflowName, String workflowPath) {                
-            Workflow workflow = new Workflow(workflowName, workflowPath);
+    public static void addWorkflow(String id, String workflowName, String workflowPath, String image) {                
+            Workflow workflow = new Workflow(id, workflowName, workflowPath, image);
             
             if(workflow != null) {
             	workflowMap.put(workflowName, workflow);
@@ -46,5 +46,9 @@ public class WorkflowFactory {
     	}
     	
     	return workflows;    	
+    }
+    
+    public Map<String, Workflow> getWorkflowsMap() {
+    	return workflowMap;    	
     }
 }
