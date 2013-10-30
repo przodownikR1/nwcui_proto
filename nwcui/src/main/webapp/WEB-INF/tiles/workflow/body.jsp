@@ -3,6 +3,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <div id="main_page" class="container page_body_content">
-	THIS IS A WORKFLOW PAGE
+	
 </div>
 

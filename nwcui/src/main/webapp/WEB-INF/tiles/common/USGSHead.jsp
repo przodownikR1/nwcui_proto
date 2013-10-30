@@ -1,31 +1,33 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+<%@include file="/WEB-INF/base.jsp"%>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <!-- REWRITE: Twitter Bootstrap Meta -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <!-- JQuery -->
-<script type="text/javascript" src="jquery/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="${context}/jquery/jquery-1.10.2.min.js"></script>
 
 <!-- Twitter Bootstrap -->
-<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+<script type="text/javascript" src="${context}/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="${context}/bootstrap/css/bootstrap.min.css"/>
 
 <!-- Our Javascript -->
-<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="${context}/js/global.js"></script>
 
 <!-- USGS CSS -->
-<link rel="stylesheet" type="text/css" href="css/usgs_common.css"/>
-<link rel="stylesheet" type="text/css" href="css/usgs_style_main.css"/>
+<link rel="stylesheet" type="text/css" href="${context}/css/usgs_common.css"/>
+<link rel="stylesheet" type="text/css" href="${context}/css/usgs_style_main.css"/>
 
 <!-- Site CSS -->
-<link rel="stylesheet" type="text/css" href="css/custom.css"/>
+<link rel="stylesheet" type="text/css" href="${context}/css/custom.css"/>
 
 <!-- Our Bootstrap Theme -->
-<script type="text/javascript" src="themes/theme1/theme1.js"></script>
-<link rel="stylesheet" type="text/css" href="themes/theme1/theme1.css"/>
+<script type="text/javascript" src="${context}/themes/theme1/theme1.js"></script>
+<link rel="stylesheet" type="text/css" href="${context}/themes/theme1/theme1.css"/>
 
 <% 
     String gaAccountCode = request.getParameter("google-analytics-account-code");
