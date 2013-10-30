@@ -2,13 +2,15 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+<%@include file="/WEB-INF/base.jsp"%>
+
 <div id="main_page" class="container page_body_content">
 	<div class="row page_body_content">
 		<div id="workflow_menu" class="col-lg-3 page_body_content">
 			<div class="well page_body_content">
 				<ul class="nav nav-pills">
 					<c:forEach var="workflow" items="${workflows}" varStatus="index">
-						<li><a href="#">${workflow}</a></li>
+						<li><a href="${context}${workflow.URI}">${workflow.name}</a></li>
 					</c:forEach>
 				</ul>
 			</div>
