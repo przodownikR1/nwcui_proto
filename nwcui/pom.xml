@@ -2,14 +2,65 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>gov.usgs.nwc</groupId>
-  <artifactId>nwcui</artifactId>
+  <groupId>gov.usgs.cida.nwc</groupId>
+  <artifactId>nwcui-proto</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>nwcui</name>
-  <url>http://maven.apache.org</url>
+  <name>NWCUI Prototype</name>
+  <url>http://cida.usgs.gov/</url>
 
+	<inceptionYear>2013</inceptionYear>
+	<organization>
+		<name>Center for Integrated Data Analytics</name>
+		<url>http://cida.usgs.gov</url>
+	</organization>
+
+	<licenses>
+		<license>
+			<name>Public Domain</name>
+			<url>http://en.wikipedia.org/wiki/Public_domain_software</url>
+			<comments>All work of the US Government enters into the Public Domain within
+				the United States.  Whether that work is public domain outside of
+				the United States depends on various factors.
+			</comments>
+		</license>
+	</licenses>
+        <developers>
+		<developer>
+			<id>cschroed</id>
+			<name>Carl Schroedl</name>
+			<email>cschroedl@usgs.gov</email>
+			<organization>Center for Integrated Data Analytics</organization>
+			<organizationUrl>http://cida.usgs.gov</organizationUrl>
+			<timezone>-6</timezone>
+		</developer>
+		<developer>
+			<id>prusso</id>
+			<name>Philip Russo</name>
+			<email>prusso@usgs.gov</email>
+			<organization>Center for Integrated Data Analytics</organization>
+			<organizationUrl>http://cida.usgs.gov</organizationUrl>
+			<timezone>-6</timezone>
+		</developer>
+        </developers>
+    <scm>
+            <url>https://github.com/cschroed-usgs/nwcui_proto</url>
+            <connection>scm:git:git@github.com:cschroed-usgs/nwcui_proto.git</connection>
+            <developerConnection>scm:git:git@github.com:cschroed-usgs/nwcui_proto.git</developerConnection>
+    </scm>
+    <distributionManagement>
+            <repository>
+                    <id>cida-releases</id>
+                    <name>CIDA Releases</name>
+                    <url>http://internal.cida.usgs.gov/maven/content/repositories/cida-releases/</url>
+            </repository>
+            <snapshotRepository>
+                    <id>cida-snapshots</id>
+                    <name>CIDA Snapshots</name>
+                    <url>http://internal.cida.usgs.gov/maven/content/repositories/cida-snapshots/</url>
+            </snapshotRepository>
+    </distributionManagement>
   <build>
 		<plugins>
 			<!-- Need to remove the requirement of the web.xml since	-->
@@ -19,7 +70,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.1.1</version>
 				<configuration>
-					<warName>nwcui</warName>
+					<warName>nwcui-proto</warName>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 					
 					<!-- Copy configuration properties to WEBINF/classes -->
@@ -34,23 +85,10 @@
 			      	</webResources>
 				</configuration>
 			</plugin>
-			
-			<!-- Maven Tomcat Plugin 							-->
-			<!-- 		mvn tomcat:deploy 						-->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-			    	<artifactId>tomcat-maven-plugin</artifactId>
-			    	<version>1.1</version>
-			    	<configuration>
-			     	<url>http://nwcui_devvm:8080/manager/text</url>
-			     	<path>/nwcui</path>
-			      	<username>admin_script</username>
-			      	<password>usgs01</password>
-			    	</configuration>
-			</plugin>
+
 		</plugins>
 		
-		<finalName>nwcui</finalName>
+		<finalName>nwcui-proto</finalName>
 	</build>
 
 	<properties>
