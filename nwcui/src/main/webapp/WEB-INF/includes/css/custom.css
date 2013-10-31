@@ -37,6 +37,21 @@
 	text-align: 	center;
 }
 
+.dashboard_div_slot a {
+	color:			#345280 !important;
+	text-decoration: 	none !important;
+}
+
+.dashboard_div_slot a:hover {
+	color:			#5674a2 !important;
+}
+
+.dashboard_div_image {
+	width: 	400px;
+	height: 	240px;
+	border: 	2px solid #345280;
+}
+
 .dashboard div {
     -webkit-transition: width 0.3s ease, margin 0.3s ease;
     -moz-transition: width 0.3s ease, margin 0.3s ease;

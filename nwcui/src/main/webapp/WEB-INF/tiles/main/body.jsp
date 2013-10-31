@@ -19,18 +19,62 @@
 			<div class="dashboard_contents page_body_content">
 				<div class="row">
 					<div id="workflow_${index}" class="col-lg-6 dashboard_div_slot" style="padding-right: 7px;">
-						<img src="${context}/img/workflow/originals/acquaticBiodata.png" style="width: 400px; height: 240px; border: 2px solid #a3a3a3;"/>
+						<div class="row">
+							<div class="col-lg-12">
+								<img src="${context}/img/workflow/originals/acquaticBiodata.png" class="dashboard_div_image"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<a href="${context}/ang/aquaticbiology/#/aquaticbiology/value1/value2">
+									Aquatic Biology
+								</a>
+							</div>
+						</div>
 					</div>
 					<div id="workflow_${index}" class="col-lg-6 dashboard_div_slot" style="padding-left: 7px;">
-						<img src="${context}/img/workflow/originals/streamflowStatistics.png" style="width: 400px; height: 240px; border: 2px solid #a3a3a3;"/>
+						<div class="row">
+							<div class="col-lg-12">
+								<img src="${context}/img/workflow/originals/streamflowStatistics.png" class="dashboard_div_image"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<a href="${context}/ang/streamflowstats/#/streamflowstats/value1/value2">
+									Streamflow Statistics
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div id="workflow_${index}" class="col-lg-6 dashboard_div_slot" style="padding-right: 7px;">
-						<img src="${context}/img/workflow/originals/waterBudget.png" style="width: 400px; height: 240px; border: 2px solid #a3a3a3;" />
+						<div class="row">
+							<div class="col-lg-12">
+								<img src="${context}/img/workflow/originals/waterBudget.png" class="dashboard_div_image" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<a href="${context}/ang/waterbudget/#/waterbudgety/value1/value2">
+									Water Budget
+								</a>
+							</div>
+						</div>
 					</div>
 					<div id="workflow_${index}" class="col-lg-6 dashboard_div_slot" style="padding-left: 7px;">
-						<img src="${context}/img/workflow/originals/acquaticBiodata.png" style="width: 400px; height: 240px; border: 2px solid #a3a3a3;" />
+						<div class="row">
+							<div class="col-lg-12">
+								<img src="${context}/img/workflow/originals/acquaticBiodata.png" class="dashboard_div_image" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<a href="${context}/ang/datadiscovery/#/datadiscovery/value1/value2">
+									Data Discovery
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
