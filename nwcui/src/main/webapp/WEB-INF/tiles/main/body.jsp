@@ -4,7 +4,6 @@
 
 <%@include file="/WEB-INF/base.jsp"%>
 
-<span id="hideNav" class="glyphicon glyphicon-chevron-left"></span>
 <div id="main_page" class="page_body_content">
 	<div class="row page_body_content dashboard">
 		<div id="dashboard_nav" class="col-lg-3 page_body_content">
@@ -38,6 +37,7 @@
 		</div>	
 	</div>
 </div>
+<span id="hideNav" class="glyphicon glyphicon-chevron-left"></span>
 
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -51,6 +51,7 @@
 			$('#dashboard_nav').toggleClass("col-lg-3 col-lg-0");
 			$('#dashboard_container').toggleClass("col-lg-9 col-lg-12");
 			$('#dashboard_nav *').children().toggleClass("col-lg-0");
+			$('#hideNav').toggleClass("glyphicon-chevron-left glyphicon-chevron-right");
 		});
 	});
 </script>

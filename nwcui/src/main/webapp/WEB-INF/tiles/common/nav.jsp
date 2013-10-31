@@ -3,5 +3,8 @@
 
 <%@include file="/WEB-INF/base.jsp"%>
 
-<h2 id="site-title" style="margin-bottom: 0px;"><a href="${context}">National Water Census</a> - ${title}</h2>
+
+<span class="site_title"><a href="${context}">National Water Census</a> - ${title}</span>
+<span class="site_version">${version}</span>
+
 

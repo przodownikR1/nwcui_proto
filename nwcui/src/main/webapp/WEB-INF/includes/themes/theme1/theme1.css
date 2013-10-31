@@ -63,6 +63,8 @@ body {
 #site_nav {
 	margin-bottom:		1px;
 	background-color: 	#345280;
+	padding-top: 		5px;
+	padding-bottom:	3px;
 }
 
 #site_content {
@@ -95,6 +97,28 @@ body {
 
 #page_content {
 	padding-top:		15px;
+}
+
+.site_title {
+	color:			#ddd;
+	text-decoration: 	none;
+}
+
+.site_title a {
+	color:			#ddd;
+	text-decoration: 	none;
+}
+
+.site_title a:hover {
+	color:			#fff;
+	background-color: 	#345280;
+}
+
+.site_version {
+	color:			#fff;
+	font-size: 		10px;
+	line-height: 		22px;
+	float:			right;
 }
 
 .site_well {

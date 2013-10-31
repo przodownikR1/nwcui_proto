@@ -7,7 +7,17 @@
 /* This css should be overwritten by the project using this template */
 
 #main_page {
-	
+	margin-left: 15px;
+}
+
+#hideNav {
+	position: absolute;
+	top: 25px;
+	left: 25px;
+}
+
+#dashboard_nav {
+	padding-left: 	0px;
 }
 
 .nav_item {

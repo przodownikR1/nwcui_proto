@@ -33,6 +33,7 @@ public class MainController {
 		log.info("MainController.entry() Called");		
 		
 		ModelAndView mv = new ModelAndView("/main", "title", "Dashboard");
+		mv.addObject("version", WebsiteUtils.getApplicationVersion());
 		
 		/**
 		 * Lets get all available workflows
@@ -50,18 +51,22 @@ public class MainController {
     public ModelAndView workflow(HttpServletRequest request) {
 		log.info("MainController.workflow() Called");
 		
-		String parameters = (String) request.getAttribute( HandlerMapping.PATH_WITHIN_HANDLER_MAPPING_ATTRIBUTE );
-		String workflowName = (Arrays.asList(parameters.split("/")).get(2));
+		String path = (String) request.getAttribute( HandlerMapping.PATH_WITHIN_HANDLER_MAPPING_ATTRIBUTE );
+		String workflowName = WebsiteUtils.parseWorkflow(path);
 		
 		Map<String, Workflow> workflowsMap = WorkflowFactory.getInstance().getWorkflowsMap();
 		
-		log.error("PATH: [" + parameters + "]");
+		log.error("PATH: [" + path + "]");
 		log.error("WORKFLOWNAME: [" + workflowName + "]");
 		
 		Workflow workflow = workflowsMap.get(workflowName);
+		if(workflow == null) {
+			workflow = new Workflow("", "Unknown Workflow Requested", "", "");
+		}
+		
 		log.error("WORKFLOWIMAGE: [" + workflow.getImage() + "]");
 		
-		ModelAndView mv = new ModelAndView("/workflow", "title", "Workflow View");
+		ModelAndView mv = new ModelAndView("/workflow", "title", workflow.getName());
 		mv.addObject("workflow", workflow);
 		
 		return mv;
