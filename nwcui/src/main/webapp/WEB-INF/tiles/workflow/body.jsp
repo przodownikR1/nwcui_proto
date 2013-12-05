@@ -6,7 +6,7 @@
 
 <div id="main_page" class="container page_body_content">
 	<div class="row" style="min-width: 960px;">
-		<div class="col-lg-12" style="text-align: center;">
+		<div class="col-xs-12" style="text-align: center;">
 			<img src="${context}${workflow.image}" style="width: 960px; height: 570px; border: 2px solid #a3a3a3;"/>
 		</div>
 	</div>

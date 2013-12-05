@@ -2,7 +2,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 
-<div class="col-lg-12">
+<div class="col-xs-12">
 	<h1>${title}</h1>
 		
 	<h4>Content: ${content}</h4>

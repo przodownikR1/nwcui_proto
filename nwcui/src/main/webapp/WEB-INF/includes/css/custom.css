@@ -6,71 +6,21 @@
 
 /* This css should be overwritten by the project using this template */
 
-#main_page {
-	margin-left: 15px;
-}
-
-#hideNav {
-	position: absolute;
-	top: 25px;
-	left: 25px;
-}
-
-#dashboard_nav {
-	padding-left: 	0px;
-}
-
-.nav_item {
-	white-space:	nowrap;
-}
-
-.dashboard {
-	padding-right:	15px;
-}
-
-.dashboard_div_slot {
-	margin-left:	auto;
-	margin-right:	auto;
-		
-	/* Padding:	Top/Right/Bottom/Left */
-	padding:		15px 15px 0px 15px;
-	text-align: 	center;
-}
-
-.dashboard_div_slot a {
-	color:			#345280 !important;
-	text-decoration: 	none !important;
-}
-
-.dashboard_div_slot a:hover {
-	color:			#5674a2 !important;
-}
-
-.dashboard_div_image {
-	width: 	400px;
-	height: 	240px;
-	border: 	2px solid #345280;
+#dashboard_container {
+	background:		#f5f5f5;
+	border:			1px solid #e3e3e3;
+	border-radius: 	4px;
+	-webkit-box-shadow:	inset 0 1px 1px rgba(0,0,0,0.05);
+	box-shadow: 		inset 0 1px 1px rgba(0,0,0,0.05);
 }
 
 .dashboard div {
-    -webkit-transition: width 0.3s ease, margin 0.3s ease;
-    -moz-transition: width 0.3s ease, margin 0.3s ease;
-    -o-transition: width 0.3s ease, margin 0.3s ease;
-    transition: width 0.3s ease, margin 0.3s ease;
+    -webkit-transition:	width 0.3s ease, margin 0.3s ease;
+    -moz-transition: 	width 0.3s ease, margin 0.3s ease;
+    -o-transition: 		width 0.3s ease, margin 0.3s ease;
+    transition: 		width 0.3s ease, margin 0.3s ease;
 }
 
-#dashboard_container {
-	background:	#f5f5f5;
-	border: 1px solid #e3e3e3;
-	border-radius: 4px;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
-	box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
-}
-
-.dashboard_contents {
-	
-}
-
-.col-lg-0 {
+.col-xs-0 {
     	display:	none; 
 }
