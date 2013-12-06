@@ -21,6 +21,45 @@
     transition: 		width 0.3s ease, margin 0.3s ease;
 }
 
-.col-xs-0 {
-    	display:	none; 
+.dashboard a:visited {
+	color:			#258;	
 }
+
+.col-xs-0 {
+    	display:			none; 
+}
+
+.navigation_panel {
+	background: 		#2A4266;
+	border-color: 		#223552 !important;
+}
+
+.navigation_panel_heading {
+	background-color: 	#2A4266 !important;
+	border-color: 		#223552 !important;
+	color: 			#fff !important;
+	text-align: 		right;
+	font-size: 		18px;
+	padding-right: 	25px;
+}
+
+.navigation_panel_body {
+	
+}
+
+.navigation_panel_item {
+	width: 			100%;
+	text-align: 		right;
+	margin-left: 		0px !important;
+}
+
+.navigation_panel_item a {
+	color: 			#ddd !important;
+}
+
+.navigation_panel_item a:hover {
+	color: 			#eee !important;
+	background-color: 	#48638D !important;	
+}
+
+

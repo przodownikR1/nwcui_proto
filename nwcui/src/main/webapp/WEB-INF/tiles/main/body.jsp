@@ -8,15 +8,15 @@
 	<div class="row dashboard" style="margin-right: 0px;">
 		<div id="dashboard_nav" class="col-xs-3" style="min-width: 220px; margin-right: -15px;">
 			<div id="dashboard_nav_contents" class="navContents">
-				<div class="panel panel-default">
-					<div class="panel-heading" style="text-align: center;">
+				<div class="panel panel-default navigation_panel">
+					<div class="panel-heading navigation_panel_heading">
 						Workflows
 					</div>
-					<div class="panel-body" style="font-size: 12px;">
+					<div class="panel-body navigation_panel_body" style="font-size: 12px;">
 						<ul class="nav nav-pills">
-							<c:forEach var="workflow" items="${workflows}" varStatus="index">
-								<li>
-									<a href="${context}${workflow.URI}" style="white-space: nowrap;">${workflow.name}</a>
+							<c:forEach var="workflow" items="${workflows}" varStatus="status">
+								<li class="navigation_panel_item">
+									<a href="${context}${workflow.URI}" style="white-space: nowrap; padding: 10px;">${workflow.name}</a>
 								</li>
 							</c:forEach>
 						</ul>
@@ -24,59 +24,34 @@
 				</div>
 			</div>
 		</div>
-		<div id="dashboard_container" class="col-xs-9" style="min-width: 355px;  margin-left: 15px; padding: 10px; margin-bottom: -10px; padding-bottom: 0px;">
-			<div class="row" style="margin-right: -30px;">
-				<div class="col-xs-6" style="min-width: 364px; margin-right: -15px;">
-					<div class="panel panel-default">
+		<div id="dashboard_container" class="col-xs-9" style="min-width: 360px;  margin-left: 15px; padding: 10px; margin-bottom: -10px;">
+			<!-- Dynamically build the dashboard depending on the workflow list -->
+			<c:forEach var="workflow" items="${workflows}" varStatus="status">
+				<!-- Add a new row div if this is an even item -->
+				<c:if test="${status.index % 2 == 0}">
+					<div class="row" style="padding-left: 10px; padding-right: 10px;">
+				</c:if>
+				
+				<div class="col-xs-6" style="min-width: 346px; padding: 0px;">
+					<div class="panel panel-default" style="margin: 10px;">
 						<div class="panel-body">
-							<img src="${context}/img/workflow/originals/acquaticBiodata.png" style="width: 400px; margin-left: auto; margin-right: auto;" class="img-responsive" />
+							<a href="${context}${workflow.URI}">
+								<img src="${context}${workflow.image}" style="width: 400px; margin-left: auto; margin-right: auto;" class="img-responsive" />
+							</a>
 						</div>
 						<div class="panel-heading" style="text-align: center;">
-							<a href="${context}/ang/aquaticbiology/#/aquaticbiology/value1/value2">
-								Aquatic Biology
+							<a href="${context}${workflow.URI}">
+								${workflow.name}
 							</a>
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-6" style="min-width: 364px;">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<img src="${context}/img/workflow/originals/streamflowStatistics.png" style="width: 400px; margin-left: auto; margin-right: auto;" class="img-responsive" />
-						</div>
-						<div class="panel-heading" style="text-align: center;">
-							<a href="${context}/ang/streamflowstats/#/streamflowstats/value1/value2">
-							Streamflow Statistics
-						</a>
-						</div>
+				
+				<!-- close the row div if this is an odd item -->
+				<c:if test="${(status.index % 2 == 1) or (status.last)}">
 					</div>
-				</div>
-			</div>
-			<div class="row" style="margin-right: -30px; margin-bottom: -10px;">
-				<div class="col-xs-6" style="min-width: 364px; margin-right: -15px;">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<img src="${context}/img/workflow/originals/waterBudget.png" style="width: 400px; margin-left: auto; margin-right: auto;" class="img-responsive" />
-						</div>
-						<div class="panel-heading" style="text-align: center;">
-							<a href="${context}/ang/waterbudget/#/waterbudgety/value1/value2">
-								Water Budget
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6" style="min-width: 364px;">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<img src="${context}/img/workflow/originals/acquaticBiodata.png" style="width: 400px; margin-left: auto; margin-right: auto;" class="img-responsive" />
-						</div>
-						<div class="panel-heading" style="text-align: center;">
-							<a href="${context}/ang/datadiscovery/#/datadiscovery/value1/value2">
-								Data Discovery
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
+				</c:if>
+			</c:forEach>
 		</div>
 	</div>
 </div>
